@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>College Registration Form</h1>
+        <form id="registrationForm" action="/register" method="POST">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <select id="nationality" name="nationality" required>
+                    <option value="">Select</option>
+                    <option value="indian">Indian</option>
+                    <option value="american">American</option>
+                    <option value="british">British</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="religion">Religion:</label>
+                <select id="religion" name="religion" required>
+                    <option value="">Select</option>
+                    <option value="hindu">Hindu</option>
+                    <option value="muslim">Muslim</option>
+                    <option value="christian">Christian</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="alternateContact">Alternate Contact Number:</label>
+                <input type="number" id="alternateContact" name="alternateContact">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="aadharNumber">Aadhar Number:</label>
+                <input type="number" id="aadharNumber" name="aadharNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" id="fatherName" name="fatherName" required>
+            </div>
+            <div class="form-group">
+                <label for="fatherContact">Father's Contact Number:</label>
+                <input type="number" id="fatherContact" name="fatherContact" required>
+            </div>
+            <div class="form-group">
+                <label for="motherName">Mother's Name:</label>
+                <input type="text" id="motherName" name="motherName" required>
+            </div>
+            <div class="form-group">
+                <label for="motherContact">Mother's Contact Number:</label>
+                <input type="number" id="motherContact" name="motherContact" required>
+            </div>
+            <div class="form-group">
+                <label for="schoolName">School Name:</label>
+                <input type="text" id="schoolName" name="schoolName" required>
+            </div>
+            <div class="form-group">
+                <label for="schoolBoard">School Board:</label>
+                <select id="schoolBoard" name="schoolBoard" required>
+                    <option value="">Select</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state">State Board</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="schoolAddress">School Address:</label>
+                <textarea id="schoolAddress" name="schoolAddress" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="yearOfPassing">Year of Passing:</label>
+                <input type="number" id="yearOfPassing" name="yearOfPassing" min="1900" max="2099" required>
+            </div>
+            <div class="form-group">
+                <label for="percentage">12th Percentage:</label>
+                <input type="text" id="percentage" name="percentage" required>
+            </div>
+            <div class="form-group">
+                <label for="courseName">Course Name:</label>
+                <select id="courseName" name="courseName" required>
+                    <option value="">Select</option>
+                    <option value="bsc">B.Sc</option>
+                    <option value="ba">B.A</option>
+                    <option value="bcom">B.Com</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select</option>
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
