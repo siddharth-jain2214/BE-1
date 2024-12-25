@@ -39,6 +39,10 @@
             font-weight: bold;
         }
 
+        .required {
+            color: red;
+        }
+
         input[type="text"],
         input[type="number"],
         input[type="date"],
@@ -82,136 +86,345 @@
         textarea {
             resize: none;
         }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="background"></div>
     <div class="container">
         <h1>College Registration Form</h1>
         <form id="registrationForm" action="/register" method="POST">
             <div class="form-group">
-                <label for="fullName">Full Name:</label>
+                <label for="fullName">Full Name:<span class="required">*</span></label>
                 <input type="text" id="fullName" name="fullName" required>
+                <div class="error" id="fullNameError"></div>
             </div>
             <div class="form-group">
-                <label for="dob">Date of Birth:</label>
+                <label for="dob">Date of Birth:<span class="required">*</span></label>
                 <input type="date" id="dob" name="dob" required>
+                <div class="error" id="dobError"></div>
             </div>
             <div class="form-group">
-                <label for="gender">Gender:</label>
+                <label for="gender">Gender:<span class="required">*</span></label>
                 <select id="gender" name="gender" required>
                     <option value="">Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="genderError"></div>
             </div>
             <div class="form-group">
-                <label for="nationality">Nationality:</label>
+                <label for="nationality">Nationality:<span class="required">*</span></label>
                 <select id="nationality" name="nationality" required>
                     <option value="">Select</option>
                     <option value="indian">Indian</option>
                     <option value="american">American</option>
                     <option value="british">British</option>
+                    <option value="brazilian">Brazilian</option>
+                    <option value="canadian">Canadian</option>
+                    <option value="chinese">Chinese</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="nationalityError"></div>
             </div>
             <div class="form-group">
-                <label for="religion">Religion:</label>
+                <label for="religion">Religion:<span class="required">*</span></label>
                 <select id="religion" name="religion" required>
                     <option value="">Select</option>
                     <option value="hindu">Hindu</option>
                     <option value="muslim">Muslim</option>
                     <option value="christian">Christian</option>
+                    <option value="sikh">Sikh</option>
+                    <option value="buddhist">Buddhist</option>
+                    <option value="jain">Jain</option>
+                    <option value="parsi">Parsi</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="religionError"></div>
             </div>
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
+                <label for="phone">Phone Number:<span class="required">*</span></label>
                 <input type="number" id="phone" name="phone" required>
+                <div class="error" id="phoneError"></div>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Email:<span class="required">*</span></label>
                 <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
             </div>
             <div class="form-group">
                 <label for="alternateContact">Alternate Contact Number:</label>
                 <input type="number" id="alternateContact" name="alternateContact">
+                <div class="error" id="alternateContactError"></div>
             </div>
             <div class="form-group">
-                <label for="address">Address:</label>
+                <label for="address">Address:<span class="required">*</span></label>
                 <textarea id="address" name="address" rows="4" required></textarea>
+                <div class="error" id="addressError"></div>
             </div>
             <div class="form-group">
-                <label for="aadharNumber">Aadhar Number:</label>
+                <label for="aadharNumber">Aadhar Number:<span class="required">*</span></label>
                 <input type="number" id="aadharNumber" name="aadharNumber" required>
+                <div class="error" id="aadharNumberError"></div>
             </div>
             <div class="form-group">
-                <label for="fatherName">Father's Name:</label>
+                <label for="fatherName">Father's Name:<span class="required">*</span></label>
                 <input type="text" id="fatherName" name="fatherName" required>
+                <div class="error" id="fatherNameError"></div>
             </div>
             <div class="form-group">
-                <label for="fatherContact">Father's Contact Number:</label>
+                <label for="fatherContact">Father's Contact Number:<span class="required">*</span></label>
                 <input type="number" id="fatherContact" name="fatherContact" required>
+                <div class="error" id="fatherContactError"></div>
             </div>
             <div class="form-group">
-                <label for="motherName">Mother's Name:</label>
+                <label for="motherName">Mother's Name:<span class="required">*</span></label>
                 <input type="text" id="motherName" name="motherName" required>
+                <div class="error" id="motherNameError"></div>
             </div>
             <div class="form-group">
-                <label for="motherContact">Mother's Contact Number:</label>
+                <label for="motherContact">Mother's Contact Number:<span class="required">*</span></label>
                 <input type="number" id="motherContact" name="motherContact" required>
+                <div class="error" id="motherContactError"></div>
             </div>
             <div class="form-group">
-                <label for="schoolName">School Name:</label>
+                <label for="schoolName">School Name:<span class="required">*</span></label>
                 <input type="text" id="schoolName" name="schoolName" required>
+                <div class="error" id="schoolNameError"></div>
             </div>
             <div class="form-group">
-                <label for="schoolBoard">School Board:</label>
+                <label for="schoolBoard">School Board:<span class="required">*</span></label>
                 <select id="schoolBoard" name="schoolBoard" required>
                     <option value="">Select</option>
                     <option value="cbse">CBSE</option>
                     <option value="icse">ICSE</option>
                     <option value="state">State Board</option>
+                    <option value="igcse">IGCSE</option>
+                    <option value="cie">CIE</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="schoolBoardError"></div>
             </div>
             <div class="form-group">
-                <label for="schoolAddress">School Address:</label>
+                <label for="schoolAddress">School Address:<span class="required">*</span></label>
                 <textarea id="schoolAddress" name="schoolAddress" rows="4" required></textarea>
+                <div class="error" id="schoolAddressError"></div>
             </div>
             <div class="form-group">
-                <label for="yearOfPassing">Year of Passing:</label>
+                <label for="yearOfPassing">Year of Passing:<span class="required">*</span></label>
                 <input type="number" id="yearOfPassing" name="yearOfPassing" min="1900" max="2099" required>
+                <div class="error" id="yearOfPassingError"></div>
             </div>
             <div class="form-group">
-                <label for="percentage">12th Percentage:</label>
+                <label for="percentage">12th Percentage:<span class="required">*</span></label>
                 <input type="text" id="percentage" name="percentage" required>
+                <div class="error" id="percentageError"></div>
             </div>
             <div class="form-group">
-                <label for="courseName">Course Name:</label>
+                <label for="courseName">Course Name:<span class="required">*</span></label>
                 <select id="courseName" name="courseName" required>
                     <option value="">Select</option>
-                    <option value="bsc">B.Sc</option>
+                    <option value="bsc">B.Tech</option>
                     <option value="ba">B.A</option>
                     <option value="bcom">B.Com</option>
+                    <option value="bba">BBA</option>
+                    <option value="bsc">BSc</option>
+                    <option value="bds">BDS</option>
+                    <option value="mbbs">MBBS</option>
+                    <option value="llb">LLB</option>
+                    <option value="mba">MBA</option>
+                    <option value="bca">BCA</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="courseNameError"></div>
             </div>
             <div class="form-group">
-                <label for="department">Department:</label>
+                <label for="department">Department:<span class="required">*</span></label>
                 <select id="department" name="department" required>
                     <option value="">Select</option>
-                    <option value="science">Science</option>
-                    <option value="arts">Arts</option>
-                    <option value="commerce">Commerce</option>
+                    <option value="computer science">Computer Science</option>
+                    <option value="electronics">Electronics and Communication</option>
+                    <option value="mechanical">Mechanical</option>
+                    <option value="civil">Civil</option>
+                    <option value="english">English</option>
+                    <option value="history">History</option>
+                    <option value="sociology">Sociology</option>
+                    <option value="economics">Economics</option>
+                    <option value="accounting">Accounts</option>
+                    <option value="finance">Finance</option>
+                    <option value="human resource">Human Resource</option>
+                    <option value="information technology">Information Technology</option>
+                    <option value="dentistry">Dentistry</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="cardiology">Cardiology</option>
                     <option value="other">Other</option>
                 </select>
+                <div class="error" id="departmentError"></div>
             </div>
             <button type="submit">Submit</button>
         </form>
     </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
+            let valid = true;
+
+            // Clear previous error messages
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(error => error.textContent = '');
+
+            // Validate Full Name
+            const fullName = document.getElementById('fullName').value;
+            if (fullName.trim() === '') {
+                document.getElementById('fullNameError').textContent = 'Full Name is required.';
+                valid = false;
+            }
+
+            // Validate Date of Birth
+            const dob = document.getElementById('dob').value;
+            if (dob === '') {
+                document.getElementById('dobError').textContent = 'Date of Birth is required.';
+                valid = false;
+            }
+
+            // Validate Gender
+            const gender = document.getElementById('gender').value;
+            if (gender === '') {
+                document.getElementById('genderError').textContent = 'Gender is required.';
+                valid = false;
+            }
+
+            // Validate Nationality
+            const nationality = document.getElementById('nationality').value;
+            if (nationality === '') {
+                document.getElementById('nationalityError').textContent = 'Nationality is required.';
+                valid = false;
+            }
+
+            // Validate Religion
+            const religion = document.getElementById('religion').value;
+            if (religion === '') {
+                document.getElementById('religionError').textContent = 'Religion is required.';
+                valid = false;
+            }
+
+            // Validate Phone Number
+            const phone = document.getElementById('phone').value;
+            if (phone.trim() === '' || phone.length < 10) {
+                document.getElementById('phoneError').textContent = 'Valid Phone Number is required.';
+                valid = false;
+            }
+
+            // Validate Email
+            const email = document.getElementById('email').value;
+            if (email.trim() === '' || !/\S+@\S+\.\S+/.test(email)) {
+                document.getElementById('emailError').textContent = 'Valid Email is required.';
+                valid = false;
+            }
+
+            // Validate Address
+            const address = document.getElementById('address').value;
+            if (address.trim() === '') {
+                document.getElementById('addressError').textContent = 'Address is required.';
+                valid = false;
+            }
+
+            // Validate Aadhar Number
+            const aadharNumber = document.getElementById('aadharNumber').value;
+            if (aadharNumber.trim() === '' || aadharNumber.length !== 12) {
+                document.getElementById('aadharNumberError').textContent = 'Valid Aadhar Number is required.';
+                valid = false;
+            }
+
+            // Validate Father's Name
+            const fatherName = document.getElementById('fatherName').value;
+            if (fatherName.trim() === '') {
+                document.getElementById('fatherNameError').textContent = 'Father\'s Name is required.';
+                valid = false;
+            }
+
+            // Validate Father's Contact Number
+            const fatherContact = document.getElementById('fatherContact').value;
+            if (fatherContact.trim() === '' || fatherContact.length < 10) {
+                document.getElementById('fatherContactError').textContent = 'Valid Father\'s Contact Number is required.';
+                valid = false;
+            }
+
+            // Validate Mother's Name
+            const motherName = document.getElementById('motherName').value;
+            if (motherName.trim() === '') {
+                document.getElementById('motherNameError').textContent = 'Mother\'s Name is required.';
+                valid = false;
+            }
+
+            // Validate Mother's Contact Number
+            const motherContact = document.getElementById('motherContact').value;
+            if (motherContact.trim() === '' || motherContact.length < 10) {
+                document.getElementById('motherContactError').textContent = 'Valid Mother\'s Contact Number is required.';
+                valid = false;
+            }
+
+            // Validate School Name
+            const schoolName = document.getElementById('schoolName').value;
+            if (schoolName.trim() === '') {
+                document.getElementById('schoolNameError').textContent = 'School Name is required.';
+                valid = false;
+            }
+
+            // Validate School Board
+            const schoolBoard = document.getElementById('schoolBoard').value;
+            if (schoolBoard === '') {
+                document.getElementById('schoolBoardError').textContent = 'School Board is required.';
+                valid = false;
+            }
+
+            // Validate School Address
+            const schoolAddress = document.getElementById('schoolAddress').value;
+            if (schoolAddress.trim() === '') {
+                document.getElementById('schoolAddressError').textContent = 'School Address is required.';
+                valid = false;
+            }
+
+            // Validate Year of Passing
+            const yearOfPassing = document.getElementById('yearOfPassing').value;
+            if (yearOfPassing.trim() === '' || yearOfPassing < 1900 || yearOfPassing > 2099) {
+                document.getElementById('yearOfPassingError').textContent = 'Valid Year of Passing is required.';
+                valid = false;
+            }
+
+            // Validate 12th Percentage
+            const percentage = document.getElementById('percentage').value;
+            if (percentage.trim() === '') {
+                document.getElementById('percentageError').textContent = '12th Percentage is required.';
+                valid = false;
+            }
+
+            // Validate Course Name
+            const courseName = document.getElementById('courseName').value;
+            if (courseName === '') {
+                document.getElementById('courseNameError').textContent = 'Course Name is required.';
+                valid = false;
+            }
+
+            // Validate Department
+            const department = document.getElementById('department').value;
+            if (department === '') {
+                document.getElementById('departmentError').textContent = 'Department is required.';
+                valid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 
 </html>
