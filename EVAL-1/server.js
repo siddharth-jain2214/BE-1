@@ -6,7 +6,6 @@ const server = http.createServer((req, res) => {
 
     if (method == "GET") {
         if (req.url === "/") {
-            console.log("inside / route and Get rquest");
             fs.readFile("User.json", "utf8", (err, data) => {
                 if (err) {
                     console.log(err);
